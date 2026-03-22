@@ -66,6 +66,7 @@ export default grammar({
 
     [$.expression, $._function_prototype],
     [$.expression, $.if_type_expression],
+    [$.expression, $.error_union_type],
 
     [$.comptime_type_expression, $.expression],
     [$.comptime_type_expression, $.parameter],
@@ -215,7 +216,7 @@ export default grammar({
       ),
     ),
 
-    _function_prototype: $ => seq(
+    _function_prototype: $ => prec.left(seq(
       'fn',
       optional(field('name', $.identifier)),
       $.parameters,
@@ -224,7 +225,7 @@ export default grammar({
       optional($.link_section),
       optional($.calling_convention),
       field('type', choice($.type_expression, $.if_type_expression, $.comptime_type_expression)),
-    ),
+    )),
 
     parameters: $ => seq('(', optionalCommaSep($.parameter), ')'),
 
@@ -711,7 +712,7 @@ export default grammar({
       $.type_expression,
     )),
 
-    error_union_type: $ => prec.right(2, seq(
+    error_union_type: $ => prec.right(seq(
       optional(field('error', $.type_expression)),
       '!',
       field('ok', $.type_expression),
@@ -768,7 +769,7 @@ export default grammar({
 
     labeled_type_expression: $ => seq($.block_label, $.block),
 
-    comptime_type_expression: $ => seq('comptime', $.type_expression),
+    comptime_type_expression: $ => prec.right(seq('comptime', $.type_expression)),
 
     if_type_expression: $ => prec.right(seq(
       $._if_prefix,
