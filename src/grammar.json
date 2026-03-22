@@ -96,6 +96,10 @@
         {
           "type": "SYMBOL",
           "name": "function_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "using_namespace_declaration"
         }
       ]
     },

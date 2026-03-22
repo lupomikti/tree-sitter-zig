@@ -115,6 +115,7 @@ export default grammar({
       $.comptime_declaration,
       $.variable_declaration,
       $.function_declaration,
+      $.using_namespace_declaration,
     ),
     
     test_declaration: $ => seq(
