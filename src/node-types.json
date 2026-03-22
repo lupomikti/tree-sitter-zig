@@ -86,18 +86,6 @@
     "named": true,
     "subtypes": [
       {
-        "type": "anyframe",
-        "named": false
-      },
-      {
-        "type": "anyframe_type",
-        "named": true
-      },
-      {
-        "type": "array_type",
-        "named": true
-      },
-      {
         "type": "boolean",
         "named": true
       },
@@ -127,10 +115,6 @@
       },
       {
         "type": "error_type",
-        "named": true
-      },
-      {
-        "type": "error_union_type",
         "named": true
       },
       {
@@ -170,23 +154,11 @@
         "named": true
       },
       {
-        "type": "nullable_type",
-        "named": true
-      },
-      {
         "type": "opaque_declaration",
         "named": true
       },
       {
-        "type": "pointer_type",
-        "named": true
-      },
-      {
         "type": "range_expression",
-        "named": true
-      },
-      {
-        "type": "slice_type",
         "named": true
       },
       {
@@ -278,7 +250,19 @@
         "named": true
       },
       {
+        "type": "anyframe_type",
+        "named": true
+      },
+      {
+        "type": "array_type",
+        "named": true
+      },
+      {
         "type": "error_set_declaration",
+        "named": true
+      },
+      {
+        "type": "error_union_type",
         "named": true
       },
       {
@@ -286,11 +270,23 @@
         "named": true
       },
       {
+        "type": "nullable_type",
+        "named": true
+      },
+      {
         "type": "parenthesized_expression",
         "named": true
       },
       {
+        "type": "pointer_type",
+        "named": true
+      },
+      {
         "type": "primary_type_expression",
+        "named": true
+      },
+      {
+        "type": "slice_type",
         "named": true
       },
       {
@@ -993,6 +989,12 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
     "type": "comptime_declaration",
     "named": true,
     "fields": {},
@@ -1065,6 +1067,21 @@
     }
   },
   {
+    "type": "container_doc_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "doc_comment_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "container_field",
     "named": true,
     "fields": {
@@ -1077,20 +1094,12 @@
             "named": true
           },
           {
-            "type": "false",
-            "named": false
-          },
-          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "primary_type_expression",
             "named": true
-          },
-          {
-            "type": "true",
-            "named": false
           }
         ]
       },
@@ -1186,6 +1195,21 @@
     }
   },
   {
+    "type": "doc_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "doc_comment_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "else_clause",
     "named": true,
     "fields": {
@@ -1224,6 +1248,10 @@
           "named": true
         },
         {
+          "type": "container_doc_comment",
+          "named": true
+        },
+        {
           "type": "container_field",
           "named": true
         },
@@ -1237,10 +1265,6 @@
         },
         {
           "type": "test_declaration",
-          "named": true
-        },
-        {
-          "type": "using_namespace_declaration",
           "named": true
         },
         {
@@ -1511,6 +1535,10 @@
         },
         {
           "type": "calling_convention",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
           "named": true
         },
         {
@@ -1917,6 +1945,10 @@
           "named": true
         },
         {
+          "type": "container_doc_comment",
+          "named": true
+        },
+        {
           "type": "container_field",
           "named": true
         },
@@ -1926,10 +1958,6 @@
         },
         {
           "type": "test_declaration",
-          "named": true
-        },
-        {
-          "type": "using_namespace_declaration",
           "named": true
         },
         {
@@ -2141,6 +2169,10 @@
           "named": true
         },
         {
+          "type": "container_doc_comment",
+          "named": true
+        },
+        {
           "type": "container_field",
           "named": true
         },
@@ -2150,10 +2182,6 @@
         },
         {
           "type": "test_declaration",
-          "named": true
-        },
-        {
-          "type": "using_namespace_declaration",
           "named": true
         },
         {
@@ -2195,6 +2223,10 @@
           "named": true
         },
         {
+          "type": "container_doc_comment",
+          "named": true
+        },
+        {
           "type": "container_field",
           "named": true
         },
@@ -2208,10 +2240,6 @@
         },
         {
           "type": "test_declaration",
-          "named": true
-        },
-        {
-          "type": "using_namespace_declaration",
           "named": true
         },
         {
@@ -2398,6 +2426,10 @@
           "named": true
         },
         {
+          "type": "container_doc_comment",
+          "named": true
+        },
+        {
           "type": "container_field",
           "named": true
         },
@@ -2414,26 +2446,7 @@
           "named": true
         },
         {
-          "type": "using_namespace_declaration",
-          "named": true
-        },
-        {
           "type": "variable_declaration",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "using_namespace_declaration",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
           "named": true
         }
       ]
@@ -2472,6 +2485,10 @@
         },
         {
           "type": "byte_alignment",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
           "named": true
         },
         {
@@ -2728,6 +2745,22 @@
     "named": false
   },
   {
+    "type": "//",
+    "named": false
+  },
+  {
+    "type": "//!",
+    "named": false
+  },
+  {
+    "type": "///",
+    "named": false
+  },
+  {
+    "type": "////",
+    "named": false
+  },
+  {
     "type": "/=",
     "named": false
   },
@@ -2804,6 +2837,10 @@
     "named": false
   },
   {
+    "type": "\\\\",
+    "named": false
+  },
+  {
     "type": "]",
     "named": false
   },
@@ -2876,6 +2913,10 @@
     "named": false
   },
   {
+    "type": "c_char",
+    "named": false
+  },
+  {
     "type": "c_int",
     "named": false
   },
@@ -2924,11 +2965,6 @@
     "named": true
   },
   {
-    "type": "comment",
-    "named": true,
-    "extra": true
-  },
-  {
     "type": "comptime",
     "named": false
   },
@@ -2951,6 +2987,10 @@
   {
     "type": "defer",
     "named": false
+  },
+  {
+    "type": "doc_comment_content",
+    "named": true
   },
   {
     "type": "else",
@@ -2994,6 +3034,10 @@
   },
   {
     "type": "f64",
+    "named": false
+  },
+  {
+    "type": "f80",
     "named": false
   },
   {
@@ -3126,10 +3170,6 @@
   },
   {
     "type": "unreachable",
-    "named": false
-  },
-  {
-    "type": "usingnamespace",
     "named": false
   },
   {

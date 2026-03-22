@@ -77,7 +77,7 @@ export default grammar({
   ],
 
   inline: $ => [
-    $._reserved_identifier,
+    $.primitive_value,
   ],
 
   precedences: $ => [
@@ -96,26 +96,18 @@ export default grammar({
   rules: {
     source_file: $ => optional($._container_members),
 
-    // _container_members: $ => choice(
-    //   seq(
-    //     repeat1(choice(
-    //       $.test_declaration,
-    //       $.comptime_declaration,
-    //       $.variable_declaration,
-    //       $.function_declaration,
-    //       $.using_namespace_declaration,
-    //       seq($.container_field, ','),
-    //     )),
-    //     optional($.container_field),
-    //   ),
-    //   $.container_field,
-    // ),
-
     _container_members: $ => seq(
-      optional($.container_doc_comment),
-      repeat($._container_declaration),
-      repeat(seq($.container_field, ',')),
-      choice($.container_field, repeat($._container_declaration)),
+      repeat($.container_doc_comment),
+      choice(
+        seq(
+          repeat1(choice(
+            $._container_declaration,
+            seq($.container_field, ','),
+          )),
+          optional($.container_field),
+        ),
+        $.container_field,
+      )
     ),
 
     _container_declaration: $ => choice(
@@ -142,7 +134,7 @@ export default grammar({
       optional('comptime'),
       choice(
         seq(
-          field('name', choice($.identifier, $._reserved_identifier, alias($.builtin_type, $.identifier))),
+          field('name', choice($.identifier, $.primitive_value, alias($.builtin_type, $.identifier))),
           ':',
           field('type', choice($.primary_type_expression, $.if_type_expression, $.comptime_type_expression)),
         ),
@@ -153,7 +145,7 @@ export default grammar({
     ))),
 
     variable_declaration: $ => seq(
-      optional($.doc_comment),
+      repeat($.doc_comment),
       optional('pub'),
       optional(choice(
         'export',
@@ -207,7 +199,7 @@ export default grammar({
     )),
 
     function_declaration: $ => seq(
-      optional($.doc_comment),
+      repeat($.doc_comment),
       optional('pub'),
       optional(choice(
         'export',
@@ -644,7 +636,6 @@ export default grammar({
       $.float,
       $.integer,
       $.error_type,
-      'anyframe',
       'unreachable',
       $.primitive_value,
       $.string,
