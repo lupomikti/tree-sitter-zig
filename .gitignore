@@ -8,6 +8,9 @@ prebuilds/
 node_modules/
 package-lock.json
 
+# Bun artifacts
+bun.lock
+
 # Swift artifacts
 .build/
 Package.resolved

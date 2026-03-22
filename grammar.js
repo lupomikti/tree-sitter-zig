@@ -28,17 +28,21 @@ const builtinTypes = [
   'f16',
   'f32',
   'f64',
+  'f80',
   'f128',
   'void',
   'type',
   'anyerror',
+  'anyframe',
   'anyopaque',
   'anytype',
+  'type',
   'noreturn',
   'isize',
   'usize',
   'comptime_int',
   'comptime_float',
+  'c_char',
   'c_short',
   'c_ushort',
   'c_int',
@@ -48,12 +52,14 @@ const builtinTypes = [
   'c_longlong',
   'c_ulonglong',
   'c_longdouble',
-  /(i|u)[1-9][0-9]*/,
+  /(i|u)[0-9]+/,
 ];
 
-module.exports = grammar({
+export default grammar({
   name: 'zig',
 
+  externals: ($) => [$.doc_comment_content, $._error_sentinel],
+  
   conflicts: $ => [
     [$.for_expression],
     [$.while_expression],
@@ -90,21 +96,35 @@ module.exports = grammar({
   rules: {
     source_file: $ => optional($._container_members),
 
-    _container_members: $ => choice(
-      seq(
-        repeat1(choice(
-          $.test_declaration,
-          $.comptime_declaration,
-          $.variable_declaration,
-          $.function_declaration,
-          $.using_namespace_declaration,
-          seq($.container_field, ','),
-        )),
-        optional($.container_field),
-      ),
-      $.container_field,
+    // _container_members: $ => choice(
+    //   seq(
+    //     repeat1(choice(
+    //       $.test_declaration,
+    //       $.comptime_declaration,
+    //       $.variable_declaration,
+    //       $.function_declaration,
+    //       $.using_namespace_declaration,
+    //       seq($.container_field, ','),
+    //     )),
+    //     optional($.container_field),
+    //   ),
+    //   $.container_field,
+    // ),
+
+    _container_members: $ => seq(
+      optional($.container_doc_comment),
+      repeat($._container_declaration),
+      repeat(seq($.container_field, ',')),
+      choice($.container_field, repeat($._container_declaration)),
     ),
 
+    _container_declaration: $ => choice(
+      $.test_declaration,
+      $.comptime_declaration,
+      $.variable_declaration,
+      $.function_declaration,
+    ),
+    
     test_declaration: $ => seq(
       optional('pub'),
       'test',
@@ -133,6 +153,7 @@ module.exports = grammar({
     ))),
 
     variable_declaration: $ => seq(
+      optional($.doc_comment),
       optional('pub'),
       optional(choice(
         'export',
@@ -186,6 +207,7 @@ module.exports = grammar({
     )),
 
     function_declaration: $ => seq(
+      optional($.doc_comment),
       optional('pub'),
       optional(choice(
         'export',
@@ -529,7 +551,7 @@ module.exports = grammar({
       return choice(...table.map(([operator, precedence]) => {
         return prec.left(precedence, seq(
           field('left', $.expression),
-          // @ts-ignore
+          // @ts-ignore:
           field('operator', operator),
           field('right', $.expression),
         ));
@@ -596,17 +618,19 @@ module.exports = grammar({
       $.struct_initializer,
       $.labeled_type_expression,
       $.error_set_declaration,
-      $.parenthesized_expression,
-      $.primary_type_expression,
-    )),
-
-    primary_type_expression: $ => choice(
+      $.parenthesized_expression,      
+      // Have PrefixTypeOp
       $.nullable_type,
       $.anyframe_type,
       $.slice_type,
       $.pointer_type,
       $.array_type,
       $.error_union_type,
+      // No PrefixTypeOp
+      $.primary_type_expression,
+    )),
+
+    primary_type_expression: $ => choice(
       $.builtin_function,
       $.character,
       $.field_expression,
@@ -619,12 +643,10 @@ module.exports = grammar({
       $.identifier,
       $.float,
       $.integer,
-      $.boolean,
       $.error_type,
       'anyframe',
       'unreachable',
-      'undefined',
-      'null',
+      $.primitive_value,
       $.string,
       $.multiline_string,
       $.builtin_type,
@@ -786,7 +808,7 @@ module.exports = grammar({
       '"',
     ),
 
-    multiline_string: _ => prec.right(repeat1(token(seq('\\\\', /[^\n]*/)))),
+    multiline_string: _ => prec.right(repeat1(seq('\\\\', /[^\n]*/))),
 
     escape_sequence: _ => token(prec(1, seq(
       '\\',
@@ -851,14 +873,21 @@ module.exports = grammar({
 
     identifier: $ => choice($._identifier, seq('@', $.string)),
     _identifier: _ => /[A-Za-z_][A-Za-z0-9_]*/,
-    _reserved_identifier: _ => choice(
+    primitive_value: $ => choice(
       'undefined',
       'null',
-      'true',
-      'false',
+      $.boolean,
     ),
 
-    comment: _ => token(seq('//', /.*/)),
+    container_doc_comment: $ => prec(3, seq('//!', $.doc_comment_content)),
+
+    doc_comment: $ => prec(2, seq('///', $.doc_comment_content)),
+
+    comment: _ => choice(
+      prec(1, seq('//', /.*/)),
+      // `//// ...` looks like a `container_doc_comment`, but it is not
+      prec(4, seq('////', /.*/)),
+    ),
   },
 });
 
