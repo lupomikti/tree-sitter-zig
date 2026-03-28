@@ -120,6 +120,7 @@ export default grammar({
     ),
     
     test_declaration: $ => seq(
+      repeat($.doc_comment),
       optional('pub'),
       'test',
       optional(choice($.string, $.identifier)),
@@ -127,12 +128,14 @@ export default grammar({
     ),
 
     comptime_declaration: $ => prec(1, seq(
+      repeat($.doc_comment),
       optional('pub'),
       'comptime',
       $.block,
     )),
 
     container_field: $ => prec.right(prec.dynamic(1, seq(
+      repeat($.doc_comment),
       optional('comptime'),
       choice(
         seq(
@@ -242,6 +245,7 @@ export default grammar({
     ),
 
     using_namespace_declaration: $ => seq(
+      repeat($.doc_comment),
       optional('pub'),
       'usingnamespace',
       $.expression,

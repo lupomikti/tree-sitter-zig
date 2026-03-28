@@ -999,11 +999,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
           "named": true
         }
       ]
@@ -1128,6 +1132,10 @@
       "types": [
         {
           "type": "byte_alignment",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
           "named": true
         },
         {
@@ -2362,6 +2370,10 @@
           "named": true
         },
         {
+          "type": "doc_comment",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -2477,9 +2489,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "doc_comment",
+          "named": true
+        },
         {
           "type": "expression",
           "named": true

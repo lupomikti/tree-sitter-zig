@@ -107,6 +107,13 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "doc_comment"
+          }
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
@@ -156,6 +163,13 @@
         "type": "SEQ",
         "members": [
           {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "doc_comment"
+            }
+          },
+          {
             "type": "CHOICE",
             "members": [
               {
@@ -187,6 +201,13 @@
         "content": {
           "type": "SEQ",
           "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "doc_comment"
+              }
+            },
             {
               "type": "CHOICE",
               "members": [
@@ -1076,6 +1097,13 @@
     "using_namespace_declaration": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "doc_comment"
+          }
+        },
         {
           "type": "CHOICE",
           "members": [
