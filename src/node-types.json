@@ -62,10 +62,6 @@
         "named": true
       },
       {
-        "type": "loop_expression",
-        "named": true
-      },
-      {
         "type": "nosuspend_expression",
         "named": true
       },
@@ -273,6 +269,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -290,6 +290,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -374,6 +378,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -391,6 +399,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -417,6 +429,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -434,6 +450,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -483,6 +503,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -500,6 +524,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -545,6 +573,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -562,6 +594,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -650,6 +686,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -671,6 +711,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -770,6 +814,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -791,6 +839,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -818,6 +870,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -835,6 +891,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -861,6 +921,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -878,6 +942,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -904,6 +972,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -925,6 +997,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -1068,6 +1144,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -1089,6 +1169,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -1117,6 +1201,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "for_expression",
           "named": true
         },
         {
@@ -1149,6 +1237,10 @@
         },
         {
           "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1246,6 +1338,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1263,6 +1359,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1328,6 +1428,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1345,6 +1449,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1371,6 +1479,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1388,6 +1500,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1414,6 +1530,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1435,6 +1555,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1501,6 +1625,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1518,6 +1646,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1548,6 +1680,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1569,6 +1705,10 @@
         },
         {
           "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1706,6 +1846,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1723,6 +1867,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1780,6 +1928,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1797,6 +1949,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1827,6 +1983,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -1844,6 +2004,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -1893,6 +2057,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -1926,6 +2094,10 @@
           },
           {
             "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -1983,6 +2155,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2019,6 +2195,10 @@
           "named": true
         },
         {
+          "type": "while_expression",
+          "named": true
+        },
+        {
           "type": "while_type_expression",
           "named": true
         }
@@ -2046,6 +2226,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2067,6 +2251,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2221,6 +2409,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2238,6 +2430,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2264,6 +2460,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2285,6 +2485,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2315,6 +2519,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2336,6 +2544,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -2362,6 +2574,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2383,6 +2599,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2409,6 +2629,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -2430,6 +2654,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2645,6 +2873,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2669,6 +2901,10 @@
             "named": true
           },
           {
+            "type": "while_expression",
+            "named": true
+          },
+          {
             "type": "while_type_expression",
             "named": true
           }
@@ -2685,6 +2921,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "for_expression",
           "named": true
         },
         {
@@ -2709,6 +2949,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -2739,6 +2983,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2760,6 +3008,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -2781,6 +3033,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2802,6 +3058,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -2843,6 +3103,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2864,6 +3128,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -2929,6 +3197,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2950,6 +3222,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -2971,6 +3247,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -2992,6 +3272,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -3023,6 +3307,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3040,6 +3328,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3066,6 +3358,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3086,30 +3382,11 @@
           "named": true
         },
         {
-          "type": "while_type_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "loop_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block_label",
-          "named": true
-        },
-        {
-          "type": "for_expression",
-          "named": true
-        },
-        {
           "type": "while_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -3137,6 +3414,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3154,6 +3435,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3184,6 +3469,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3201,6 +3490,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3396,6 +3689,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3413,6 +3710,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3458,6 +3759,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3475,6 +3780,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3501,6 +3810,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -3522,6 +3835,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -3543,6 +3860,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -3564,6 +3885,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -3591,6 +3916,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3608,6 +3937,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3634,6 +3967,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3651,6 +3988,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3677,6 +4018,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -3698,6 +4043,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -3850,6 +4199,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3883,6 +4236,10 @@
         },
         {
           "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -3981,6 +4338,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -3998,6 +4359,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4028,6 +4393,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4049,6 +4418,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4075,6 +4448,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4096,6 +4473,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4145,6 +4526,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4162,6 +4547,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4188,6 +4577,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -4209,6 +4602,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -4278,6 +4675,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4314,6 +4715,10 @@
           "named": true
         },
         {
+          "type": "while_expression",
+          "named": true
+        },
+        {
           "type": "while_type_expression",
           "named": true
         }
@@ -4337,6 +4742,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4354,6 +4763,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4427,6 +4840,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4451,6 +4868,10 @@
           "named": true
         },
         {
+          "type": "while_expression",
+          "named": true
+        },
+        {
           "type": "while_type_expression",
           "named": true
         }
@@ -4471,6 +4892,10 @@
           },
           {
             "type": "expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
             "named": true
           },
           {
@@ -4498,6 +4923,10 @@
             "named": true
           },
           {
+            "type": "while_expression",
+            "named": true
+          },
+          {
             "type": "while_type_expression",
             "named": true
           }
@@ -4514,6 +4943,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "for_expression",
           "named": true
         },
         {
@@ -4538,6 +4971,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {
@@ -4568,6 +5005,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -4589,6 +5030,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -4610,6 +5055,10 @@
             "named": true
           },
           {
+            "type": "for_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
             "named": true
           },
@@ -4631,6 +5080,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           },
           {
@@ -4657,6 +5110,10 @@
           "named": true
         },
         {
+          "type": "for_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
           "named": true
         },
@@ -4681,6 +5138,10 @@
           "named": true
         },
         {
+          "type": "while_expression",
+          "named": true
+        },
+        {
           "type": "while_type_expression",
           "named": true
         }
@@ -4701,6 +5162,10 @@
           },
           {
             "type": "expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
             "named": true
           },
           {
@@ -4728,6 +5193,10 @@
             "named": true
           },
           {
+            "type": "while_expression",
+            "named": true
+          },
+          {
             "type": "while_type_expression",
             "named": true
           }
@@ -4744,6 +5213,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "for_expression",
           "named": true
         },
         {
@@ -4768,6 +5241,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         },
         {

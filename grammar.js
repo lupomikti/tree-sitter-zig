@@ -60,7 +60,7 @@ export default grammar({
 
   conflicts: $ => [
     [$._container_members],
-    [$.loop_expression],
+    [$._loop_expression],
     [$._loop_type_expression],
   ],
 
@@ -72,10 +72,6 @@ export default grammar({
   inline: $ => [
     $.primitive_value,
   ],
-
-  // precedences: $ => [
-  //   [$.container_field, $.type_expression],
-  // ],
 
   supertypes: $ => [
     $.statement,
@@ -439,17 +435,17 @@ export default grammar({
       $.await_expression, // Removed from Zig 0.15.x onward
       $.resume_expression,
       $.return_expression,
-      $.loop_expression,
       $.braced_expression, // CurlySuffixExpr
       $.block,
     ),
 
     _primary_expression: $ => choice(
       $.primary_expression,
+      $._loop_expression,
       $._type_expression, // CurlySuffixExpr
     ),
 
-    loop_expression: $ => seq(
+    _loop_expression: $ => seq(
       optional($.block_label),
       optional('inline'),
       choice(

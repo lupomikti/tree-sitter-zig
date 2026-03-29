@@ -2148,10 +2148,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "loop_expression"
-        },
-        {
-          "type": "SYMBOL",
           "name": "braced_expression"
         },
         {
@@ -2169,11 +2165,15 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_loop_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_type_expression"
         }
       ]
     },
-    "loop_expression": {
+    "_loop_expression": {
       "type": "SEQ",
       "members": [
         {
@@ -6702,7 +6702,7 @@
       "_container_members"
     ],
     [
-      "loop_expression"
+      "_loop_expression"
     ],
     [
       "_loop_type_expression"
