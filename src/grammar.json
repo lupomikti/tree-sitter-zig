@@ -209,6 +209,10 @@
                           "name": "identifier"
                         },
                         {
+                          "type": "SYMBOL",
+                          "name": "primitive_value"
+                        },
+                        {
                           "type": "ALIAS",
                           "content": {
                             "type": "SYMBOL",
@@ -223,21 +227,26 @@
                   {
                     "type": "STRING",
                     "value": ":"
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "type",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_type_expression"
+                    }
                   }
                 ]
               },
               {
-                "type": "BLANK"
+                "type": "FIELD",
+                "name": "name",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_type_expression"
+                }
               }
             ]
-          },
-          {
-            "type": "FIELD",
-            "name": "type",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_type_expression"
-            }
           },
           {
             "type": "CHOICE",

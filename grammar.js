@@ -124,11 +124,13 @@ export default grammar({
     container_field: $ => prec.right(2, seq(
       repeat($.doc_comment),
       optional('comptime'),
-      optional(seq(
-        field('name', choice($.identifier, alias($.builtin_type, $.identifier))),
+      choice(seq(
+        field('name', choice($.identifier, $.primitive_value, alias($.builtin_type, $.identifier))),
         ':',
-      )),
-      field('type', $._type_expression),
+        field('type', $._type_expression),
+      ),
+      field('name', $._type_expression),
+      ),
       optional($.byte_alignment),
       optional(seq('=', $._expression)),
     )),
