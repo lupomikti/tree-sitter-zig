@@ -59,6 +59,7 @@ export default grammar({
   externals: ($) => [$.doc_comment_content, $._error_sentinel],
 
   conflicts: $ => [
+    [$.parameters],
     [$._container_members],
     [$._loop_expression],
     [$._loop_type_expression],
@@ -180,17 +181,24 @@ export default grammar({
       optional($.link_section),
     )),
 
-    function_declaration: $ => seq(
-      optional(choice(
-        'export',
+    function_declaration: $ => choice(
+      seq(
+        optional(choice(
+          'export',
+          'inline',
+          'noinline',
+        )),
+        $._function_prototype,
+        choice(
+          ';',
+          field('body', $.block),
+        ),
+      ),
+      // extern fn cannot be followed by a block
+      seq(
         seq('extern', optional($.string)),
-        'inline',
-        'noinline',
-      )),
-      $._function_prototype,
-      choice(
+        $._function_prototype,
         ';',
-        field('body', $.block),
       ),
     ),
 
@@ -206,7 +214,13 @@ export default grammar({
       field('type', $._type_expression),
     )),
 
-    parameters: $ => seq('(', optionalCommaSep($.parameter), ')'),
+    parameters: $ => seq(
+      '(',
+      optionalCommaSep($.parameter),
+      // `...` is only allowed as the last parameter
+      optional(seq(choice($.parameter, '...'), optional(','))),
+      ')',
+    ),
 
     parameter: $ => choice(
       seq(
@@ -218,7 +232,6 @@ export default grammar({
         )),
         field('type', choice($._type_expression, 'anytype')),
       ),
-      '...',
     ),
 
     using_namespace_declaration: $ => seq(
@@ -408,6 +421,8 @@ export default grammar({
 
     byte_alignment: $ => seq('align', '(', $._expression, ')'),
 
+    bit_alignment: $ => seq('align', '(', $._expression, optional(seq(':', $._expression, ':', $._expression)), ')'),
+
     address_space: $ => seq('addrspace', '(', $._expression, ')'),
 
     link_section: $ => seq('linksection', '(', $._expression, ')'),
@@ -474,7 +489,7 @@ export default grammar({
       '[',
       $.identifier,
       ']',
-      choice($.string, $.multiline_string),
+      $.string,
       '(',
       choice(seq('->', $._type_expression), $.identifier),
       ')',
@@ -484,7 +499,7 @@ export default grammar({
       '[',
       $.identifier,
       ']',
-      choice($.string, $.multiline_string),
+      $.string,
       '(',
       $._expression,
       ')',
@@ -750,26 +765,32 @@ export default grammar({
       ),
     )),
 
-    pointer_type: $ => prec.right(1, seq(
-      choice(
-        '*',
-        '**',
-        seq(
-          '[',
-          '*',
-          optional(choice('c', seq(':', $._expression))),
-          ']',
-        ),
-      ),
+    pointer_type: $ => choice(
+      $._single_pointer_type,
+      $._many_pointer_type,
+    ),
+
+    _single_pointer_type: $ => prec.right(1, seq(
+      choice('*', '**'),
       repeat(choice(
         $.address_space,
-        seq(
-          'align',
-          '(',
-          $._expression,
-          optional(seq(':', $._expression, ':', $._expression)),
-          ')',
-        ),
+        $.bit_alignment,
+        'const',
+        'volatile',
+        'allowzero',
+      )),
+      choice(
+        $.error_union_type,
+        $.suffix_expression,
+        $._primary_type_expression,
+      ),
+    )),
+
+    _many_pointer_type: $ => prec.right(1, seq(
+      seq('[', '*', optional(choice('c', seq(':', $._expression))), ']'),
+      repeat(choice(
+        $.address_space,
+        $.byte_alignment,
         'const',
         'volatile',
         'allowzero',
@@ -818,7 +839,6 @@ export default grammar({
       optional(field('right', $._expression)),
       ']',
     ),
-
 
     anonymous_struct_initializer: $ => seq('.', $.initializer_list),
 

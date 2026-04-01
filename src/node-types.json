@@ -1184,6 +1184,57 @@
     }
   },
   {
+    "type": "bit_alignment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_label",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "for_expression",
+          "named": true
+        },
+        {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "primary_expression",
+          "named": true
+        },
+        {
+          "type": "primary_type_expression",
+          "named": true
+        },
+        {
+          "type": "switch_expression",
+          "named": true
+        },
+        {
+          "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -3633,7 +3684,7 @@
       },
       "type": {
         "multiple": true,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "anytype",
@@ -3779,7 +3830,15 @@
           "named": true
         },
         {
+          "type": "bit_alignment",
+          "named": true
+        },
+        {
           "type": "block_label",
+          "named": true
+        },
+        {
+          "type": "byte_alignment",
           "named": true
         },
         {
