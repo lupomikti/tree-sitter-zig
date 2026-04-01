@@ -831,44 +831,6 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "parameter"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "..."
-                    }
-                  ]
-                },
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ","
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
           "type": "STRING",
           "value": ")"
         }
@@ -939,32 +901,50 @@
                     {
                       "type": "STRING",
                       "value": ":"
+                    },
+                    {
+                      "type": "FIELD",
+                      "name": "type",
+                      "content": {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_type_expression"
+                          },
+                          {
+                            "type": "STRING",
+                            "value": "anytype"
+                          }
+                        ]
+                      }
                     }
                   ]
                 },
                 {
-                  "type": "BLANK"
+                  "type": "FIELD",
+                  "name": "name",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_type_expression"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "anytype"
+                      }
+                    ]
+                  }
                 }
               ]
-            },
-            {
-              "type": "FIELD",
-              "name": "type",
-              "content": {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "_type_expression"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "anytype"
-                  }
-                ]
-              }
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": "..."
         }
       ]
     },
@@ -6812,9 +6792,6 @@
     }
   ],
   "conflicts": [
-    [
-      "parameters"
-    ],
     [
       "_container_members"
     ],

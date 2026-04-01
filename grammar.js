@@ -59,7 +59,6 @@ export default grammar({
   externals: ($) => [$.doc_comment_content, $._error_sentinel],
 
   conflicts: $ => [
-    [$.parameters],
     [$._container_members],
     [$._loop_expression],
     [$._loop_type_expression],
@@ -217,8 +216,6 @@ export default grammar({
     parameters: $ => seq(
       '(',
       optionalCommaSep($.parameter),
-      // `...` is only allowed as the last parameter
-      optional(seq(choice($.parameter, '...'), optional(','))),
       ')',
     ),
 
@@ -226,12 +223,16 @@ export default grammar({
       seq(
         repeat($.doc_comment),
         optional(choice('noalias', 'comptime')),
-        optional(seq(
-          field('name', choice($.identifier, alias($.builtin_type, $.identifier))),
-          ':',
-        )),
-        field('type', choice($._type_expression, 'anytype')),
+        choice(
+          seq(
+            field('name', choice($.identifier, alias($.builtin_type, $.identifier))),
+            ':',
+            field('type', choice($._type_expression, 'anytype')),
+          ),
+          field('name', choice($._type_expression, 'anytype')),
+        ),
       ),
+      '...',
     ),
 
     using_namespace_declaration: $ => seq(
