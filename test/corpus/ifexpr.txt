@@ -1,0 +1,53 @@
+================================================================================
+If Expression
+================================================================================
+
+const patas = "asdf";
+const Bar = @import("Bar.zig");
+
+pub fn main() void {
+    for (patas) |p| {
+        const foo: Bar = if (baz)
+            biff
+        else
+            try func(p) orelse continue;
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (global_variable_declaration
+    (identifier)
+    (string
+      (string_content)))
+  (global_variable_declaration
+    (identifier)
+    (builtin_function
+      (builtin_identifier)
+      (arguments
+        (string
+          (string_content)))))
+  (function_declaration
+    (identifier)
+    (parameters)
+    (builtin_type)
+    (block
+      (for_statement
+        (identifier)
+        (payload
+          (identifier))
+        (block
+          (variable_declaration
+            (identifier)
+            (identifier)
+            (if_expression
+              (identifier)
+              (identifier)
+              (binary_expression
+                (try_expression
+                  (suffix_expression
+                    (identifier)
+                    (arguments
+                      (identifier))))
+                (continue_expression)))))))))
