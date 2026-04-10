@@ -67,8 +67,6 @@ export default grammar({
     [$.while_type_expression],
     [$.parameter, $._type_expression],
     [$.primary_expression, $._type_expression],
-    // [$.primary_expression, $.for_type_expression],
-    // [$.primary_expression, $.while_type_expression],
   ],
 
   extras: $ => [
@@ -113,7 +111,7 @@ export default grammar({
         choice(
           $.global_variable_declaration,
           $.function_declaration,
-          $.using_namespace_declaration, // Removed from Zig 0.15.x onward
+          $.using_namespace_declaration, // Removed in Zig 0.15.1
         ),
       ),
     ),
@@ -457,8 +455,8 @@ export default grammar({
       $.comptime_expression,
       $.nosuspend_expression,
       $.continue_expression,
-      $.async_expression, // Removed from Zig 0.15.x onward
-      $.await_expression, // Removed from Zig 0.15.x onward
+      $.async_expression, // Removed in Zig 0.15.1
+      $.await_expression, // Removed in Zig 0.15.1
       $.resume_expression,
       $.return_expression,
       $.for_expression,
@@ -662,8 +660,8 @@ export default grammar({
 
     type_expression: $ => prec.right(choice(
       // Have PrefixTypeOp
-      $.nullable_type, // PrefixTypeOp = `?`
-      $.anyframe_type, // PrefixTypeOp = `anyframe ->`
+      $.nullable_type,
+      $.anyframe_type,
       $.slice_type,
       $.pointer_type,
       $.array_type,
@@ -676,7 +674,8 @@ export default grammar({
     _type_expression: $ => choice($.type_expression, $.if_type_expression),
 
     suffix_expression: $ => prec.right(PREC.MEMBER, seq(
-      // where the head is just an identifier and the next node is arguments, this is a call_expression
+      // where the head is just an identifier and the next node is `(arguments)`
+      // this is a non-method function call
       field('head', $.primary_type_expression),
       repeat1(choice(
         field('arguments', $.arguments),
@@ -862,6 +861,7 @@ export default grammar({
       choice($.identifier, alias($.builtin_type, $.identifier)),
       ':',
     )),
+
     break_label: $ => seq(':', $.identifier),
 
     arguments: $ => seq('(', optionalCommaSep($.expression), ')'),
