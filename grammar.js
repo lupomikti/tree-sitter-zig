@@ -96,7 +96,7 @@ export default grammar({
       repeat($._container_declaration),
       repeat(seq($.container_field, ',')),
       choice(
-        $.container_field,
+        seq($.container_field, optional(',')),
         repeat1($._container_declaration),
       ),
     ),
@@ -134,7 +134,9 @@ export default grammar({
         ':',
         field('type', $._type_expression),
       ),
-      field('name', $._type_expression),
+      // explicitly disallowing $.function_signature to avoid $.container_field matching when $._container_declaration should
+      // does the same to prevent $.comptime_type_expression from matching as well
+      field('name', choice($.type_expression, $.if_type_expression, $._loop_type_expression)),
       ),
       optional($.byte_alignment),
       optional(seq('=', $.expression)),
@@ -232,9 +234,9 @@ export default grammar({
           seq(
             field('name', choice($.identifier, alias($.builtin_type, $.identifier))),
             ':',
-            field('type', choice($.type_expression, $.if_type_expression, $._loop_type_expression, 'anytype')),
+            field('type', choice($.type_expression, $._special_primary_type_expression, 'anytype')),
           ),
-          field('name', choice($.type_expression, $.if_type_expression, $._loop_type_expression, 'anytype')),
+          field('name', choice($.type_expression, $._special_primary_type_expression, 'anytype')),
         ),
       ),
       '...',
@@ -672,8 +674,14 @@ export default grammar({
 
     _type_expression: $ => choice(
       $.type_expression,
+      $._special_primary_type_expression,
+    ),
+
+    _special_primary_type_expression: $ => choice(
       $.if_type_expression,
       $._loop_type_expression,
+      $.function_signature,
+      $.comptime_type_expression, // KEYWORD_comptime TypeExpr
     ),
 
     suffix_expression: $ => prec.right(PREC.MEMBER, seq(
@@ -702,8 +710,6 @@ export default grammar({
       $.parenthesized_expression, // GroupedExpr
       $.labeled_block_expression,
       $.switch_expression,
-      $.comptime_type_expression, // KEYWORD_comptime TypeExpr
-      prec.right(alias($._function_prototype, $.function_signature)),
       alias($._field_suffix, $.field_expression), // DOT IDENTIFIER
       $.identifier,
       $.primitive_value, // Technically should be IDENTIFIER, but this way they can be highlighted separately
@@ -716,6 +722,8 @@ export default grammar({
       $.multiline_string,
       $.builtin_type,
     ),
+
+    function_signature: $ => prec.right($._function_prototype),
 
     nullable_type: $ => prec(1, seq(
       '?',

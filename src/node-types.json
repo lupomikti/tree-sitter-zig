@@ -120,10 +120,6 @@
         "named": true
       },
       {
-        "type": "comptime_type_expression",
-        "named": true
-      },
-      {
         "type": "enum_declaration",
         "named": true
       },
@@ -141,10 +137,6 @@
       },
       {
         "type": "float",
-        "named": true
-      },
-      {
-        "type": "function_signature",
         "named": true
       },
       {
@@ -327,7 +319,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -369,11 +369,19 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         },
         {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -499,7 +507,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -902,7 +918,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -1126,7 +1150,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -1206,7 +1238,15 @@
         "required": false,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -1501,7 +1541,15 @@
         "required": true,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -1637,11 +1685,19 @@
           "named": true
         },
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         },
         {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -1692,7 +1748,15 @@
         "required": true,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -1760,7 +1824,15 @@
         "required": true,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -1814,7 +1886,15 @@
         "required": false,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -1980,7 +2060,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -2137,7 +2225,15 @@
       "required": true,
       "types": [
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -2211,7 +2307,15 @@
             "named": false
           },
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -2241,7 +2345,15 @@
             "named": false
           },
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -2336,11 +2448,19 @@
           "named": true
         },
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         },
         {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -2442,7 +2562,15 @@
           "named": true
         },
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
@@ -2838,7 +2966,15 @@
         "required": false,
         "types": [
           {
+            "type": "comptime_type_expression",
+            "named": true
+          },
+          {
             "type": "for_type_expression",
+            "named": true
+          },
+          {
+            "type": "function_signature",
             "named": true
           },
           {
@@ -2997,11 +3133,19 @@
           "named": true
         },
         {
+          "type": "comptime_type_expression",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         },
         {
           "type": "for_type_expression",
+          "named": true
+        },
+        {
+          "type": "function_signature",
           "named": true
         },
         {
