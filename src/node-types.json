@@ -26,28 +26,6 @@
     ]
   },
   {
-    "type": "labeled_type_expression",
-    "named": true,
-    "subtypes": [
-      {
-        "type": "for_type_expression",
-        "named": true
-      },
-      {
-        "type": "labeled_block_expression",
-        "named": true
-      },
-      {
-        "type": "switch_expression",
-        "named": true
-      },
-      {
-        "type": "while_type_expression",
-        "named": true
-      }
-    ]
-  },
-  {
     "type": "primary_expression",
     "named": true,
     "subtypes": [
@@ -178,7 +156,7 @@
         "named": true
       },
       {
-        "type": "labeled_type_expression",
+        "type": "labeled_block_expression",
         "named": true
       },
       {
@@ -203,6 +181,10 @@
       },
       {
         "type": "struct_declaration",
+        "named": true
+      },
+      {
+        "type": "switch_expression",
         "named": true
       },
       {
@@ -345,11 +327,19 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -383,11 +373,19 @@
           "named": true
         },
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -501,6 +499,10 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -514,6 +516,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -896,6 +902,10 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
@@ -905,6 +915,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -1112,11 +1126,19 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -1150,6 +1172,10 @@
             "named": true
           },
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -1168,6 +1194,10 @@
           {
             "type": "undefined",
             "named": false
+          },
+          {
+            "type": "while_type_expression",
+            "named": true
           }
         ]
       },
@@ -1176,11 +1206,19 @@
         "required": false,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -1463,11 +1501,19 @@
         "required": true,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -1595,6 +1641,10 @@
           "named": true
         },
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
@@ -1604,6 +1654,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -1638,11 +1692,19 @@
         "required": true,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -1698,11 +1760,19 @@
         "required": true,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -1744,11 +1814,19 @@
         "required": false,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -1902,6 +1980,10 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
@@ -1911,6 +1993,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -2051,11 +2137,19 @@
       "required": true,
       "types": [
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -2117,6 +2211,10 @@
             "named": false
           },
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -2126,6 +2224,10 @@
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -2139,11 +2241,19 @@
             "named": false
           },
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -2230,11 +2340,19 @@
           "named": true
         },
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -2324,11 +2442,19 @@
           "named": true
         },
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]
@@ -2712,11 +2838,19 @@
         "required": false,
         "types": [
           {
+            "type": "for_type_expression",
+            "named": true
+          },
+          {
             "type": "if_type_expression",
             "named": true
           },
           {
             "type": "type_expression",
+            "named": true
+          },
+          {
+            "type": "while_type_expression",
             "named": true
           }
         ]
@@ -2867,6 +3001,10 @@
           "named": true
         },
         {
+          "type": "for_type_expression",
+          "named": true
+        },
+        {
           "type": "if_type_expression",
           "named": true
         },
@@ -2876,6 +3014,10 @@
         },
         {
           "type": "type_expression",
+          "named": true
+        },
+        {
+          "type": "while_type_expression",
           "named": true
         }
       ]

@@ -84,7 +84,6 @@ export default grammar({
     $.primary_expression,
     $.type_expression,
     $.primary_type_expression,
-    $.labeled_type_expression,
   ],
 
   word: $ => $._identifier,
@@ -233,9 +232,9 @@ export default grammar({
           seq(
             field('name', choice($.identifier, alias($.builtin_type, $.identifier))),
             ':',
-            field('type', choice($.type_expression, $.if_type_expression, 'anytype')),
+            field('type', choice($.type_expression, $.if_type_expression, $._loop_type_expression, 'anytype')),
           ),
-          field('name', choice($.type_expression, $.if_type_expression, 'anytype')),
+          field('name', choice($.type_expression, $.if_type_expression, $._loop_type_expression, 'anytype')),
         ),
       ),
       '...',
@@ -671,7 +670,11 @@ export default grammar({
       $.primary_type_expression,
     )),
 
-    _type_expression: $ => choice($.type_expression, $.if_type_expression),
+    _type_expression: $ => choice(
+      $.type_expression,
+      $.if_type_expression,
+      $._loop_type_expression,
+    ),
 
     suffix_expression: $ => prec.right(PREC.MEMBER, seq(
       // where the head is just an identifier and the next node is `(arguments)`
@@ -697,7 +700,8 @@ export default grammar({
       $.anonymous_struct_initializer, // DOT InitList
       $.error_set_declaration,
       $.parenthesized_expression, // GroupedExpr
-      $.labeled_type_expression,
+      $.labeled_block_expression,
+      $.switch_expression,
       $.comptime_type_expression, // KEYWORD_comptime TypeExpr
       prec.right(alias($._function_prototype, $.function_signature)),
       alias($._field_suffix, $.field_expression), // DOT IDENTIFIER
@@ -822,14 +826,12 @@ export default grammar({
       $.expression,
     ),
 
-    labeled_type_expression: $ => choice(
-      $.labeled_block_expression,
-      $.for_type_expression,
-      $.while_type_expression,
-      $.switch_expression,
-    ),
-
     labeled_block_expression: $ => seq($.block_label, $.block),
+
+    _loop_type_expression: $ => choice(
+      $.for_type_expression,
+      $.while_type_expression,      
+    ),
 
     comptime_type_expression: $ => prec.right(1, seq('comptime', $._type_expression)),
 

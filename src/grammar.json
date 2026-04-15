@@ -917,6 +917,10 @@
                             "name": "if_type_expression"
                           },
                           {
+                            "type": "SYMBOL",
+                            "name": "_loop_type_expression"
+                          },
+                          {
                             "type": "STRING",
                             "value": "anytype"
                           }
@@ -938,6 +942,10 @@
                       {
                         "type": "SYMBOL",
                         "name": "if_type_expression"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_loop_type_expression"
                       },
                       {
                         "type": "STRING",
@@ -4631,6 +4639,10 @@
         {
           "type": "SYMBOL",
           "name": "if_type_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_loop_type_expression"
         }
       ]
     },
@@ -4743,7 +4755,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "labeled_type_expression"
+          "name": "labeled_block_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "switch_expression"
         },
         {
           "type": "SYMBOL",
@@ -5420,27 +5436,6 @@
         }
       ]
     },
-    "labeled_type_expression": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "labeled_block_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "for_type_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "while_type_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "switch_expression"
-        }
-      ]
-    },
     "labeled_block_expression": {
       "type": "SEQ",
       "members": [
@@ -5451,6 +5446,19 @@
         {
           "type": "SYMBOL",
           "name": "block"
+        }
+      ]
+    },
+    "_loop_type_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "for_type_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "while_type_expression"
         }
       ]
     },
@@ -6804,8 +6812,7 @@
     "expression",
     "primary_expression",
     "type_expression",
-    "primary_type_expression",
-    "labeled_type_expression"
+    "primary_type_expression"
   ],
   "reserved": {}
 }
